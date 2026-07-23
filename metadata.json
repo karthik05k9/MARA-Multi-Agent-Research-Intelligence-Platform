@@ -1,0 +1,6 @@
+{
+  "name": "Multi-Agent AI Research Assistant",
+  "description": "An agentic research platform that gathers live evidence from papers, GitHub, web blogs, model hubs, and benchmarks to synthesize trends and debate claims via collaborative AI agents.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
