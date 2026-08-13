@@ -1,7 +1,3 @@
-<<<<<<< Updated upstream
-
-=======
-<<<<<<< HEAD
 # MARA — Multi-Agent Research Intelligence Platform
 
 <p align="center">
@@ -446,8 +442,3 @@ MARA builds on public research and developer ecosystems including arXiv, IEEE Xp
   Built for research that is broad in coverage, explicit about evidence, and easy to inspect.
 </p>
 =======
-Readme.md
- 
- 
->>>>>>> e311e22a4a8ad71ea51811bcc24cd814b467fca9
->>>>>>> Stashed changes
