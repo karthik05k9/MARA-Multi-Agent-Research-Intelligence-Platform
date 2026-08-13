@@ -53,19 +53,6 @@ The intelligence view exposes agent status, evidence-backed findings, consensus,
 <!-- ![Agent intelligence panel](docs/images/agent-intelligence.png) -->
 <!-- ![Grounded follow-up conversation](docs/images/grounded-follow-up.png) -->
 
-### Where to add screenshots
-
-Store README images in `docs/images/` using the filenames shown below. This keeps media separate from application assets and makes every path in this README portable on GitHub.
-
-| Screenshot | File to add | Recommended capture |
-| --- | --- | --- |
-| Full workspace | `docs/images/research-workspace.png` | Graph, summary, and evidence explorer together |
-| Knowledge graph | `docs/images/knowledge-graph.png` | A populated graph with one concept selected |
-| Agent intelligence | `docs/images/agent-intelligence.png` | Agent runs, insights, consensus, and gaps |
-| Follow-up Q&A | `docs/images/grounded-follow-up.png` | An answer with its “Sources used” citations |
-
-For a clean result, use PNG or WebP, crop browser chrome, avoid exposing API keys or personal history, and target a width of roughly 1400–1800 px. After adding an image, uncomment its Markdown line in the relevant section above.
-
 ## Architecture
 
 MARA separates presentation, orchestration, retrieval, analysis, and synthesis. The active frontend is `src/pages/ResearchExplorer.tsx`; the active API pipeline is mounted from `server/routes/research.ts`.
@@ -379,58 +366,6 @@ The frontend supplies the normalized sources and compact conversation history. T
 ```
 
 Some files with alternate suffixes and the older `App_1.tsx` represent earlier prototypes and are not imported by the active `App.tsx` → `ResearchExplorer.tsx` path. When extending the current product, begin with the active files identified above.
-
-## Extending MARA
-
-### Add a retrieval agent
-
-1. Create an agent in `server/agents/` that returns `Promise<NormalizedSource[]>`.
-2. Add its call to the parallel retrieval block in `server/routes/research.ts`.
-3. Include its results in `dedupeAndSortSources(...)`.
-4. Add an `AgentRun` entry so its progress remains observable in the UI.
-5. Update the source type, filters, and icons if it introduces a new evidence category.
-
-### Improve the knowledge graph
-
-The graph has two distinct layers:
-
-- `server/agents/topicNodeAgent.ts` decides which concepts exist and which sources support them.
-- `NodeGraph` in `src/pages/ResearchExplorer.tsx` controls rendering, physics, selection, filtering, and zoom behavior.
-
-For richer relationships, extend `TopicNode` (or introduce an explicit edge type) in both shared and client types, return those edges from the topic-node agent, and pass them into `react-force-graph-2d` instead of constructing only question-to-concept links.
-
-### Add a new LLM provider
-
-Implement the provider branch in `server/llm/provider.ts` while preserving the `JsonLLM.generateJson(prompt, schema)` contract. Then document its environment variables in `.env.example` and this README.
-
-## Reliability and current limitations
-
-- External APIs and RSS feeds can be slow, unavailable, or rate-limited; MARA preserves results from successful agents.
-- IEEE retrieval is skipped unless `IEEE_API_KEY` is set.
-- LLM failures activate evidence-grounded fallbacks, but fallback synthesis is less nuanced.
-- Recent sessions live in one browser's `localStorage`; they are not synchronized between devices or users.
-- The active frontend currently calls `http://localhost:3000` directly, so a deployed client should use an environment-driven API base URL.
-- Ranking is heuristic and should not be interpreted as peer-review quality or factual certainty.
-- Retrieved material and generated synthesis should be verified before high-stakes use.
-
-## Contributing
-
-1. Create a focused branch.
-2. Keep new provider logic behind the normalized-source interface.
-3. Preserve graceful degradation: an optional agent should not break the complete research run.
-4. Run `npm run lint` and `npm run build` before opening a pull request.
-5. Include screenshots for visible UI changes and describe any new environment variables.
-
-## Roadmap ideas
-
-- Persistent projects backed by a database
-- Authentication and team workspaces
-- Environment-driven client API URLs
-- Rich concept-to-concept and source-to-source graph edges
-- Export to Markdown, PDF, and citation formats
-- Configurable source weighting and time windows
-- Automated evaluation for retrieval quality and citation faithfulness
-- Streaming agent progress and partial results
 
 ## Acknowledgements
 
