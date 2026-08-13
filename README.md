@@ -441,4 +441,3 @@ MARA builds on public research and developer ecosystems including arXiv, IEEE Xp
 <p align="center">
   Built for research that is broad in coverage, explicit about evidence, and easy to inspect.
 </p>
-=======
