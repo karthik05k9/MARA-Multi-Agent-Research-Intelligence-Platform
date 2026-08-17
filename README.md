@@ -10,7 +10,7 @@
   <img alt="Express" src="https://img.shields.io/badge/Express-4-000000?logo=express&logoColor=white">
   <img alt="Vite" src="https://img.shields.io/badge/Vite-6-646CFF?logo=vite&logoColor=white">
 </p>
-
+  
 MARA is a full-stack research workspace that coordinates specialized agents to search multiple live sources in parallel, normalize and rank the evidence, extract evidence-backed concepts, synthesize findings, and answer follow-up questions from the retrieved documents.
 
 The interface keeps the complete research trail visible: every concept can be opened in the interactive knowledge graph, every insight can be traced to its sources, and every follow-up answer includes the documents used.
