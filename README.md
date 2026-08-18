@@ -22,7 +22,7 @@ The interface keeps the complete research trail visible: every concept can be op
 - Expands a broad question into focused search queries with an LLM-backed planning agent.
 - Searches arXiv, IEEE Xplore, technology RSS feeds, GitHub, and Hugging Face concurrently.
 - Converts heterogeneous results into one consistent evidence model.
-- Deduplicates and ranks records using relevance and freshness signals.
+- Deduplicates and ranks records using relevance and freshness signals.   
 - Builds an interactive knowledge graph of concepts linked to supporting sources.
 - Produces brief and extensive summaries, findings, consensus points, and evidence gaps.
 - Shows an execution trace for each research, analysis, and synthesis agent.
