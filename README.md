@@ -3,7 +3,7 @@
 <p align="center">
   <strong>Turn one research question into a traceable map of papers, news, repositories, models, concepts, and evidence-grounded insights.</strong>
 </p>
-
+  
 <p align="center">
   <img alt="React" src="https://img.shields.io/badge/React-19-149ECA?logo=react&logoColor=white">
   <img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-5.8-3178C6?logo=typescript&logoColor=white">   
