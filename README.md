@@ -40,7 +40,7 @@ Enter a question in natural language. MARA runs the research pipeline and return
 
 ### 2. Interactive knowledge graph
 
-The center node represents the research question. Concept nodes are extracted from the retrieved evidence, their size reflects supporting-source coverage, and selecting one filters the evidence explorer.
+The center node represents the research question. Concept nodes are extracted from the retrieved evidence, their size reflects supporting-source coverage, and selecting one filters the evidence explorer. 
 
 <!-- SCREENSHOT: Add docs/images/knowledge-graph.png, then remove this comment and uncomment the line below. -->
 <!-- ![MARA interactive knowledge graph](docs/images/knowledge-graph.png) -->
