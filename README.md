@@ -46,7 +46,7 @@ The center node represents the research question. Concept nodes are extracted fr
 <!-- ![MARA interactive knowledge graph](docs/images/knowledge-graph.png) -->
 
 ### 3. Agent intelligence and grounded follow-ups
-
+     
 The intelligence view exposes agent status, evidence-backed findings, consensus, and gaps. Follow-up answers are restricted to the current result set—or to the selected concept's evidence—and display their citations.
 
 <!-- SCREENSHOT: Add docs/images/agent-intelligence.png and docs/images/grounded-follow-up.png, then uncomment the lines below. -->
